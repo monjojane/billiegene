@@ -15,7 +15,7 @@ import joblib
 shutil.rmtree('keras_tuner/m6A_tuning_v2', ignore_errors=True)
 
 # Load your data
-df = pd.read_csv('aggregated_new.csv')
+df = pd.read_csv('../data/aggregated_new.csv')
 
 # Preprocess the data
 X = df[['Dwelling_time1', 'Std_dev_signal1', 'Mean_signal1', 

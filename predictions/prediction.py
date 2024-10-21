@@ -4,7 +4,7 @@ import joblib
 import numpy as np
 
 # Load your trained model
-model = load_model('m6A_model.h5')  # Replace with the actual path to your saved model
+model = load_model('../model/m6A_model.h5')  # Replace with the actual path to your saved model
 
 # Define a function to parse and load the CSV data
 def parse_csv(csv_file):
@@ -45,6 +45,6 @@ def predict_m6a_modifications(model, csv_file, output_csv):
         print("Error: Required columns not found in the dataset!")
 
 # Example of using the function
-csv_file = "aggregated2_new.csv"  # Replace with the path to your input CSV file
+csv_file = "../data/aggregated2_new.csv"  # Replace with the path to your input CSV file
 output_csv = "billiegene_dataset2_2.csv"  # Name of the output CSV file
 predict_m6a_modifications(model, csv_file, output_csv)
