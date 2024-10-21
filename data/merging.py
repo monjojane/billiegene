@@ -44,6 +44,12 @@ df.to_csv('data_parsed.csv', index=False)
 df2 = pd.read_csv('data.info.labelled')
 df2.to_csv('datainfolabelled_parsed.csv', index=False)
 
-merged_df = pd.merge(df2, df, how='left', left_on= ['transcript_id','transcript_position'], right_on= ['Transcript_ID', 'Position'])
+# Merge the dataset with the labelled data 
+# this one also if the column headings different u go change accordingly
+merged_df = pd.merge(df2, df, how='left', left_on=['transcript_id', 'transcript_position'], right_on=['Transcript_ID', 'Position'])
+merged_df = merged_df[['gene_id', 'transcript_id', 'transcript_position', 'label', 'Sequence', 
+                      'Dwelling_time1', 'Std_dev_signal1', 'Mean_signal1',
+                      'Dwelling_time2', 'Std_dev_signal2', 'Mean_signal2', 
+                      'Dwelling_time3', 'Std_dev_signal3', 'Mean_signal3']]
 print(merged_df.head())
-merged_df.to_csv('mergeddata.csv',index=False)
+merged_df.to_csv('merged1_parsed.csv', index=False)

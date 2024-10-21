@@ -1,53 +1,42 @@
 import json
 import pandas as pd
 
-def parse_data(json_file):
-    # Initialize an empty list to hold the parsed data
-    parsed_data = []
+# Initialize an empty list to store the flattened data
+flattened_data = []
 
-    # Open the file and read line by line
-    with open(json_file, 'r') as f:
-        for line in f:
-            if line.strip():  # Skip empty lines
-                try:
-                    # Load the JSON data from the current line
-                    json_data = json.loads(line)
+# Open the file and load each JSON object line-by-line
+with open('dataset2.json', 'r') as f:
+    for line in f:
+        try:
+            # Parse each line as a separate JSON object
+            data = json.loads(line)
 
-                    # Iterate through the transcripts
-                    for transcript_id, positions in json_data.items():
-                        # Iterate through each position in the transcript
-                        for pos, nucleotides in positions.items():
-                            # Iterate through the nucleotide combinations
-                            for nucleotide_seq, reads in nucleotides.items():
-                                # Iterate through each read and extract features
-                                for read in reads:
-                                    # Create a dictionary to store features for this read
-                                    features = {
-                                        'transcript_id': transcript_id,
-                                        'transcript_position': pos,
-                                        'nucleotide_sequence': nucleotide_seq,
-                                        'dwelling_time': read[0],
-                                        'std_dev': read[1],
-                                        'mean_signal': read[2],
-                                        'dwelling_time_flank1': read[3],
-                                        'std_dev_flank1': read[4],
-                                        'mean_signal_flank1': read[5],
-                                        'dwelling_time_flank2': read[6],
-                                        'std_dev_flank2': read[7],
-                                        'mean_signal_flank2': read[8],
-                                    }
-                                    # Append the features dictionary to the list
-                                    parsed_data.append(features)
+            # Flattening the JSON data into a list of rows
+            for transcript_id, positions in data.items():
+                for position, sequences in positions.items():
+                    for seq, features_list in sequences.items():
+                        for features in features_list:
+                            row = [transcript_id, position, seq] + features
+                            flattened_data.append(row)
+        except json.JSONDecodeError as e:
+            print(f"Error decoding JSON on line: {line}")
+            print(e)
 
-                except json.JSONDecodeError as e:
-                    print(f"Error parsing line: {e}")
+# Define the columns for the DataFrame
+columns = ['Transcript_ID', 'Position', 'Sequence', 
+           'Dwelling_time1', 'Std_dev_signal1', 'Mean_signal1', 
+           'Dwelling_time2', 'Std_dev_signal2', 'Mean_signal2', 
+           'Dwelling_time3', 'Std_dev_signal3', 'Mean_signal3']
 
-    # Convert the list of parsed data into a DataFrame
-    df = pd.DataFrame(parsed_data)
+# Create a DataFrame from the flattened data
+df = pd.DataFrame(flattened_data, columns=columns)
 
-    return df
+# Change the position dtype to integer
+df['Position'] = df['Position'].astype(int)
 
-# Example usage
-jsonfile = 'dataset0.json'  # Replace with your actual JSON file path
-parsed_df = parse_data(jsonfile)
-print(parsed_df.head())  # Display the first few rows of the parsed DataFrame
+# Display the first few rows of the DataFrame
+print(df.head())
+print(df.info())
+
+# Save the dataframe as csv
+df.to_csv('data2_parsed.csv', index=False)
