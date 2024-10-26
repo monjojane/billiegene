@@ -2,11 +2,11 @@
 DSA4262 Project (team: billiegene)
 
 # Table of Contents
-1. [Repository Structure](https://github.com/monjojane/billiegene/edit/main/README.md#repository-structure)
-2. [Prerequisites](https://github.com/monjojane/billiegene/edit/main/README.md#prerequisites)
-3. [AWS Setup Guide](https://github.com/monjojane/billiegene/edit/main/README.md#aws-setup-guide)
-4. [Model training and prediction](https://github.com/monjojane/billiegene/edit/main/README.md#aws-setup-guide)
-5. [Issues](https://github.com/monjojane/billiegene/edit/main/README.md#issues)
+1. [Repository Structure](https://github.com/monjojane/billiegene/tree/main?tab=readme-ov-file#repository-structure)
+2. [Prerequisites](https://github.com/monjojane/billiegene/tree/main?tab=readme-ov-file#prerequisites)
+3. [AWS Setup Guide](https://github.com/monjojane/billiegene/tree/main?tab=readme-ov-file#aws-setup-guide)
+4. [Model training and prediction](https://github.com/monjojane/billiegene/tree/main?tab=readme-ov-file#model-training-and-prediction)
+5. [Issues](https://github.com/monjojane/billiegene/tree/main?tab=readme-ov-file#issues)
 
 # Repository Structure
 - README.md - Main documentation
