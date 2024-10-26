@@ -1,41 +1,71 @@
-# billiegene
-DSA4262 Project 
+# Prediction of m6A RNA Modifications from Direct RNA-Seq Data
+DSA4262 Project (team: billiegene)
 
-## Structure
-1) `data` folder
-  - Contains datasets used as well as codes used to manipulate the data.
+# Table of Contents
+1. [Repository Structure](https://github.com/monjojane/billiegene/edit/main/README.md#repository-structure)
+2. [Prerequisites](https://github.com/monjojane/billiegene/edit/main/README.md#prerequisites)
+3. [AWS Setup Guide](https://github.com/monjojane/billiegene/edit/main/README.md#aws-setup-guide)
+4. [Model training and prediction](https://github.com/monjojane/billiegene/edit/main/README.md#aws-setup-guide)
+5. [Issues](https://github.com/monjojane/billiegene/edit/main/README.md#issues)
 
-2) `model` folder
-  - Contains code for creating the model as well as the model itself.
+# Repository Structure
+- README.md - Main documentation
+- requirements.txt - Dependencies
+- /data - Test data and code for data parsing and manipulation
+- /model - Trained model file and script for model training
+- /predictions - Expected predictions csv file and script for predictions
 
-3) `prediction` folder
-  - Contains code used to make predictions using the model as well as prediction csvs that were generated.
+# Prerequisites
 
-## Steps before running any files
-1) Change directory in your terminal to `billiegene` and run `pip install -r requirements.txt`.
-  - You may use a virtual environment if you wish to.
+## System Requirements 
+- AWS Ubuntu EC2 instance (tested on t3.medium or higher)
+- Python 3.8+
 
-## How to run and use the model
-#### 1. Model Training  
-Use the train_model.py script to train a new model on RNA-Seq data.  
+## Dependencies 
+Install all necessary Python packages:
+<pre>pip install -r requirements.txt</pre>
 
-Command:  
-python train_model.py --data ./data/train_data.json --labels ./data/labels.csv --output ./models/model.pkl
-  
-- Inputs:  
-  - RNA-Seq data processed by m6Anet (in JSON format)  
-  - Labels file containing m6A site information  
-- Output:  
-  - Trained model saved in models/ directory
+Alternatively, create a virtual environment:
+<pre>python3 -m venv myenv  
+source myenv/bin/activate  
+pip install -r requirements.txt</pre>
+
+# AWS Setup Guide 
+1. Launch an EC2 Instance
+   1. Create an ubuntu instance on Research Gateway
+   2. Select instance type: `t3.medium` (or higher)
+2. Install git and clone the billiegene repository
+<pre>sudo apt update && sudo apt install -y git python3-pip  
+git clone https://github.com/monjojane/billiegene.git  
+cd billiegene</pre>
+
+# Model training and prediction 
+(this part still nd to clarify if we need them to train the model themselves or js use model pkl)
+## 1. Model Training  
+Use the `train_model.py` script to train a new model on RNA-Seq data.  
+
+Command: <pre>python train_model.py --data ./data/train_data.json --labels ./data/labels.csv --output ./models/model.pkl</pre>
+
+Inputs:  
+  - RNA-Seq data processed by m6Anet (`train_data.json`)  
+  - Labels file containing m6A site information (`labels.csv`)
+
+Output:  
+  - Trained model saved as `model.pkl` in `models/` directory
     
-#### 2. Making Predictions  
+## 2. Making Predictions  
 Use the predict_m6A.py script to make predictions on new data.  
 
 Command:  
-python predict_m6A.py --data ./data/test_data.json --model ./models/model.pkl --output ./predictions.csv
-  
-- Inputs:  
-  - RNA-Seq test data (in JSON format)  
-  - Optional: Pre-trained model  
-- Output:  
-  - A CSV file with predicted m6A sites
+<pre>python predict_m6A.py --data ./data/test_data.json --model ./models/model.pkl --output ./predictions.csv</pre>
+
+Inputs:  
+  - RNA-Seq test data (`test_data.json`)  
+  - Optional: Pre-trained model (`model.pkl`)
+
+Output:  
+  - A CSV file with predicted m6A sites (`predictions.csv`)
+
+# Issues
+- Instance Limitations:
+  Low-memory instances may encounter issues during model training. Consider using larger instance types.
