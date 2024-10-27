@@ -68,4 +68,4 @@ Output:
 
 # Issues
 - Instance Limitations:
-  Low-memory instances may encounter issues during model training. Consider using larger instance types.
+  Low-memory instances may encounter issues (e.g. insufficient memory, runtime error) during model training. Consider using larger instance types if faced with these issues.
