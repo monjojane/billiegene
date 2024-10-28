@@ -31,6 +31,9 @@ cd billiegene</pre>
 - Python 3.8+
 
 ## Dependencies 
+Ensure that you are in the project directory `billiegene`, else naviate to that directory using this command:
+<pre>cd billiegene</pre>
+
 Install all necessary Python packages:
 <pre>pip install -r requirements.txt</pre>
 
