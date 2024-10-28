@@ -42,6 +42,9 @@ Alternatively, create a virtual environment:
 source myenv/bin/activate  
 pip install -r requirements.txt</pre>
 
+After installation, you can verify the packages were installed successfully:
+<pre>pip list</pre>
+
 # Model training and prediction 
 (this part still nd to clarify if we need them to train the model themselves or js use model pkl)
 ## 1. Model Training  
