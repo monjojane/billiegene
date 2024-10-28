@@ -3,10 +3,10 @@ DSA4262 Project (team: billiegene)
 
 # Table of Contents
 1. [Repository Structure](https://github.com/monjojane/billiegene/tree/main?tab=readme-ov-file#repository-structure)
-2. [Prerequisites](https://github.com/monjojane/billiegene/tree/main?tab=readme-ov-file#prerequisites)
-3. [AWS Setup Guide](https://github.com/monjojane/billiegene/tree/main?tab=readme-ov-file#aws-setup-guide)
-4. [Model training and prediction](https://github.com/monjojane/billiegene/tree/main?tab=readme-ov-file#model-training-and-prediction)
-5. [Issues](https://github.com/monjojane/billiegene/tree/main?tab=readme-ov-file#issues)
+2. [AWS Setup Guide](https://github.com/monjojane/billiegene/tree/main?tab=readme-ov-file#aws-setup-guide)
+3. [Prerequisites](https://github.com/monjojane/billiegene/tree/main?tab=readme-ov-file#prerequisites)
+5. [Model training and prediction](https://github.com/monjojane/billiegene/tree/main?tab=readme-ov-file#model-training-and-prediction)
+6. [Issues](https://github.com/monjojane/billiegene/tree/main?tab=readme-ov-file#issues)
 
 # Repository Structure
 - README.md - Main documentation
@@ -14,6 +14,15 @@ DSA4262 Project (team: billiegene)
 - /data - Test data and code for data parsing and manipulation
 - /model - Trained model file and script for model training
 - /predictions - Expected predictions csv file and script for predictions
+
+# AWS Setup Guide 
+1. Launch an EC2 Instance
+   1. Create an ubuntu instance on Research Gateway
+   2. Select instance type: `t3.medium` (or higher)
+2. Install git and clone the billiegene repository
+<pre>sudo apt update && sudo apt install -y git python3-pip  
+git clone https://github.com/monjojane/billiegene.git  
+cd billiegene</pre>
 
 # Prerequisites
 
@@ -29,15 +38,6 @@ Alternatively, create a virtual environment:
 <pre>python3 -m venv myenv  
 source myenv/bin/activate  
 pip install -r requirements.txt</pre>
-
-# AWS Setup Guide 
-1. Launch an EC2 Instance
-   1. Create an ubuntu instance on Research Gateway
-   2. Select instance type: `t3.medium` (or higher)
-2. Install git and clone the billiegene repository
-<pre>sudo apt update && sudo apt install -y git python3-pip  
-git clone https://github.com/monjojane/billiegene.git  
-cd billiegene</pre>
 
 # Model training and prediction 
 (this part still nd to clarify if we need them to train the model themselves or js use model pkl)
