@@ -1,6 +1,0 @@
-import gzip 
-import shutil
-
-with gzip.open('dataset0.json.gz', 'rb') as f_in:
-    with open('dataset0.json', 'wb') as f_out:
-        shutil.copyfileobj(f_in, f_out)
