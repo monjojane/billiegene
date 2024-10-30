@@ -45,29 +45,63 @@ pip install -r requirements.txt</pre>
 After installation, you can verify the packages were installed successfully:
 <pre>pip list</pre>
 
+# Usage
+## Data parsing
+Use `data_parsing.py` to parse your raw data into a readable format.
+Ensure that the raw json file is in the `data` folder.
+**Step 1:** `cd` into the `data` folder
+**Step 2:**  Run the `data_parsing.py` script.
+```python3 data_parsing.py```
+
+## Training the model (Optional)
+Use `model_training.py` to train the model.
+**Step 1:** Create a new empty `.pkl` file  under the `model` folder which you would like to save the trained model to.
+**Step 2:** Ensure the paths in the `model_training.py` corresponds to the file you created in step 1.
+**Step 3:** `cd` into the `model` folder.
+**Step 4:** Run the `model_training.py` script.
+```python3 model_training.py```
+
+## Making predictions
+Use `prediction.py` to make predictions.
+This script loads the saved trained model and uses it to make predictions on a set of data you input
+**Step 1:** Ensure the dataset (parsed csv file) you wish to make predictions on is under the `data` folder.
+**Step 2:** Edit the script to input the csv file.
+**Step 3:** Create a new empty `.csv` file under `prediction` folder which you would like to save the results to.
+**Step 4:** Ensure the path to output_csv in `prediction.py` corresponds to the file you created in step 3.
+**Step 5:** `cd` into the `prediction` folder.
+**Step 6:** Run the `prediction.py` script.
+```python3 prediction.py```
+
+
+# Example Usage
+We already have a dataset ready to make predictions on. This dataset has been parsed and aggregated using our scripts. 
+We have also saved the trained model as `rf_model_reduced_tuned_kfold.pkl` and also created an empty csv file to save your predictions to. 
+All you have to do is `cd` into `prediction` folder and run the `prediction.py` file to generate the results.
+```python3 prediction.py```
+
 # Model training and prediction 
 (this part still nd to clarify if we need them to train the model themselves or js use model pkl)
 ## 1. Model Training  
-Use the `train_model.py` script to train a new model on RNA-Seq data.  
+Use the `model_training.py` script to train a new model on RNA-Seq data.  
 
-Command: <pre>python train_model.py --data ./data/train_data.json --labels ./data/labels.csv --output ./models/model.pkl</pre>
+Command: <pre>python model_training.py --data ./data/train_data.json --labels ./data/labels.csv --output ./models/model.pkl</pre>
 
 Inputs:  
   - RNA-Seq data processed by m6Anet (`train_data.json`)  
   - Labels file containing m6A site information (`labels.csv`)
 
 Output:  
-  - Trained model saved as `model.pkl` in `models/` directory
+  - Trained model saved as `rf_model_reduced_tuned_kfold.pkl` in `model/` directory
     
 ## 2. Making Predictions  
-Use the predict_m6A.py script to make predictions on new data.  
+Use the `prediction.py` script to make predictions on new data.  
 
 Command:  
-<pre>python predict_m6A.py --data ./data/test_data.json --model ./models/model.pkl --output ./predictions.csv</pre>
+<pre>python prediction.py --data ./data/test_data.json --model ./models/model.pkl --output ./predictions.csv</pre>
 
 Inputs:  
   - RNA-Seq test data (`test_data.json`)  
-  - Optional: Pre-trained model (`model.pkl`)
+  - Optional: Pre-trained model (`rf_model_reduced_tuned_kfold.pkl`)
 
 Output:  
   - A CSV file with predicted m6A sites (`predictions.csv`)
