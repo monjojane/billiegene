@@ -46,38 +46,64 @@ After installation, you can verify the packages were installed successfully:
 <pre>pip list</pre>
 
 # Usage
+
+To run/test the scripts, follow these step-by-step instructions:
+
 ## Data parsing
 Use `data_parsing.py` to parse your raw data into a readable format.
+
 Ensure that the raw json file is in the `data` folder.
+
 **Step 1:** `cd` into the `data` folder
+
 **Step 2:**  Run the `data_parsing.py` script.
-```python3 data_parsing.py```
+
+```bash 
+python3 data_parsing.py
+```
 
 ## Training the model (Optional)
 Use `model_training.py` to train the model.
+
 **Step 1:** Create a new empty `.pkl` file  under the `model` folder which you would like to save the trained model to.
+
 **Step 2:** Ensure the paths in the `model_training.py` corresponds to the file you created in step 1.
+
 **Step 3:** `cd` into the `model` folder.
+
 **Step 4:** Run the `model_training.py` script.
-```python3 model_training.py```
+
+```bash
+python3 model_training.py
+```
 
 ## Making predictions
 Use `prediction.py` to make predictions.
+
 This script loads the saved trained model and uses it to make predictions on a set of data you input
+
 **Step 1:** Ensure the dataset (parsed csv file) you wish to make predictions on is under the `data` folder.
+
 **Step 2:** Edit the script to input the csv file.
+
 **Step 3:** Create a new empty `.csv` file under `prediction` folder which you would like to save the results to.
+
 **Step 4:** Ensure the path to output_csv in `prediction.py` corresponds to the file you created in step 3.
+
 **Step 5:** `cd` into the `prediction` folder.
+
 **Step 6:** Run the `prediction.py` script.
-```python3 prediction.py```
+
+<pre>python3 prediction.py</pre>
 
 
 # Example Usage
 We already have a dataset ready to make predictions on. This dataset has been parsed and aggregated using our scripts. 
-We have also saved the trained model as `rf_model_reduced_tuned_kfold.pkl` and also created an empty csv file to save your predictions to. 
+We have also saved the trained model as `rf_model_reduced_tuned_kfold.pkl` and also created an empty csv file to save your predictions to.
+
 All you have to do is `cd` into `prediction` folder and run the `prediction.py` file to generate the results.
-```python3 prediction.py```
+
+<pre>python3 prediction.py</pre>
 
 # Model training and prediction 
 (this part still nd to clarify if we need them to train the model themselves or js use model pkl)
