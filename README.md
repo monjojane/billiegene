@@ -94,7 +94,9 @@ This script loads the saved trained model and uses it to make predictions on a s
 
 **Step 6:** Run the `prediction.py` script.
 
-<pre>python3 prediction.py</pre>
+```bash
+python3 prediction.py
+```
 
 
 # Example Usage
@@ -103,7 +105,9 @@ We have also saved the trained model as `rf_model_reduced_tuned_kfold.pkl` and a
 
 All you have to do is `cd` into `prediction` folder and run the `prediction.py` file to generate the results.
 
-<pre>python3 prediction.py</pre>
+```bash
+python3 prediction.py
+```
 
 # Model training and prediction 
 (this part still nd to clarify if we need them to train the model themselves or js use model pkl)
