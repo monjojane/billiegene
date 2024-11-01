@@ -1,7 +1,7 @@
 import pandas as pd
 import joblib
 
-with open('/Users/jheongry/Documents/GitHub/billiegene/model/rf_model_reduced_tuned_kfold.pkl', 'rb') as f: # path where trained model is saved
+with open('../models/model.pkl', 'rb') as f: # path where trained model is saved
     model = joblib.load(f)
 
 def parse_csv(csv_file):
@@ -33,6 +33,6 @@ def predict_m6a_modifications(model, csv_file, output_csv):
 
     print(f"\nPredictions saved to {output_csv}")
 
-csv_file = "/Users/jheongry/Documents/GitHub/billiegene/data/rf_aggregated2.csv"  # path to parsed and aggregated csv file 
-output_csv = "/Users/jheongry/Documents/GitHub/billiegene/prediction/predicted_m6A_sites_dataset2.csv"  # path to the output csv file
+csv_file = "../data/example_parsed_data.csv"  # path to parsed and aggregated csv file 
+output_csv = "../prediction/example_prediction_results.csv"  # path to the output csv file
 predict_m6a_modifications(model, csv_file, output_csv)
