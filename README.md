@@ -19,10 +19,18 @@ DSA4262 Project (team: billiegene)
 1. Launch an EC2 Instance
    1. Create an ubuntu instance on Research Gateway
    2. Select instance type: `t3.medium` (or higher)
-2. Install git and clone the billiegene repository
-<pre>sudo apt update && sudo apt install -y git python3-pip  
+2. Install git 
+```bash
+sudo apt update && sudo apt install -y git python3-pip 
+```
+3. Clone the billiegene repository
+``` bash
 git clone https://github.com/monjojane/billiegene.git  
+```
+4. `cd` into billiegene
+```bash
 cd billiegene</pre>
+```
 
 # Prerequisites
 
