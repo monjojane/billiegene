@@ -99,5 +99,5 @@ for i, cm in enumerate(confusion_matrices, 1):
     print(f"Confusion Matrix for Fold {i}:\n{cm}\n")
 
 # Save the final model
-joblib.dump(rf_model_reduced_tuned_kfold, '/Users/jheongry/Documents/GitHub/billiegene/models/rf_model_reduced_tuned_kfold.pkl') # path to save trained model to
-print("Final model saved as 'rf_model_reduced_tuned_kfold.pkl'")
+joblib.dump(rf_model_reduced_tuned_kfold, '../models/model.pkl') # path to save trained model to
+print("Final model saved as 'model.pkl'")

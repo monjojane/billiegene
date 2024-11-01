@@ -62,10 +62,9 @@ def aggregate_data(df):
     }).reset_index()
     return aggregated_df
 
-# Main code block
-if __name__ == "__main__":
-    json_file = "/Users/jheongry/Documents/GitHub/billiegene/data/dataset0.json" # path to json file you want to parse
-    parsed_df = parse_data(json_file)
-    aggregated_df = aggregate_data(parsed_df)
-    aggregated_df.to_csv('rf_aggregated2.csv', index=False)
-    print("Aggregated data saved to 'rf_aggregated2.csv'")
+
+json_file = "../data/dataset0.json" # path to json file you want to parse
+parsed_df = parse_data(json_file)
+aggregated_df = aggregate_data(parsed_df)
+aggregated_df.to_csv('parsed_data.csv', index=False)
+print("Aggregated data saved to 'parsed_data.csv'")

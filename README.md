@@ -65,13 +65,11 @@ python3 data_parsing.py
 ## Training the model (Optional)
 Use `model_training.py` to train the model.
 
-**Step 1:** Create a new empty `.pkl` file  under the `model` folder which you would like to save the trained model to.
+**Step 1:** Ensure the paths in the `model_training.py` corresponds to the file you created in step 1.
 
-**Step 2:** Ensure the paths in the `model_training.py` corresponds to the file you created in step 1.
+**Step 2:** `cd` into the `model` folder.
 
-**Step 3:** `cd` into the `model` folder.
-
-**Step 4:** Run the `model_training.py` script.
+**Step 3:** Run the `model_training.py` script.
 
 ```bash
 python3 model_training.py
@@ -86,13 +84,11 @@ This script loads the saved trained model and uses it to make predictions on a s
 
 **Step 2:** Edit the script to input the csv file.
 
-**Step 3:** Create a new empty `.csv` file under `prediction` folder which you would like to save the results to.
+**Step 3:** Ensure the path to output_csv in `prediction.py` corresponds to the file you created in step 3.
 
-**Step 4:** Ensure the path to output_csv in `prediction.py` corresponds to the file you created in step 3.
+**Step 4:** `cd` into the `prediction` folder.
 
-**Step 5:** `cd` into the `prediction` folder.
-
-**Step 6:** Run the `prediction.py` script.
+**Step 5:** Run the `prediction.py` script.
 
 ```bash
 python3 prediction.py
@@ -100,8 +96,9 @@ python3 prediction.py
 
 
 # Example Usage
-We already have a dataset ready to make predictions on. This dataset has been parsed and aggregated using our scripts. 
-We have also saved the trained model as `rf_model_reduced_tuned_kfold.pkl` and also created an empty csv file to save your predictions to.
+We already have a dataset ready (`example_parsed_data.csv`) to make predictions on. This dataset has been parsed and aggregated using our scripts. 
+
+We have also saved the trained model as `model.pkl` which is already loaded in the `prediction.py` script.
 
 All you have to do is `cd` into `prediction` folder and run the `prediction.py` file to generate the results.
 
