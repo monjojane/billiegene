@@ -9,11 +9,12 @@ DSA4262 Project (team: billiegene)
 6. [Issues](https://github.com/monjojane/billiegene/tree/main?tab=readme-ov-file#issues)
 
 # Repository Structure
-- README.md - Main documentation
-- requirements.txt - Dependencies
 - /data - Test data and code for data parsing and manipulation
 - /models - Trained model file and script for model training
 - /predictions - Expected predictions csv file and script for predictions
+- README.md - Main documentation
+- requirements.txt - Dependencies
+
 
 # AWS Setup Guide 
 1. Launch an EC2 Instance
@@ -61,7 +62,9 @@ pip list
 
 # How to run the method on AWS
 
-To run/test the scripts, follow these step-by-step instructions:
+To run/test the scripts, ensure you have done the AWS setup guide and installed all necessary dependencies as mentioned above. 
+
+Then follow these step-by-step instructions:
 
 ## Data parsing
 Use `data_parsing.py` to parse your raw json data into a readable csv format.
@@ -91,15 +94,13 @@ python3 model_training.py
 ```
 
 ## Making predictions
-Use `prediction.py` to make predictions.
+Use `prediction.py` to make predictions. This script loads the saved trained model and uses it to make predictions on a set of data you input.
 
-This script loads the saved trained model and uses it to make predictions on a set of data you input.
-
-**Step 1:** Ensure the dataset (parsed csv file) you wish to make predictions on is under the `data` folder.
+**Step 1:** Ensure the dataset (parsed csv file) you wish to make predictions on is in the `data` folder.
 
 **Step 2:** Edit the `prediction.py` script to input the csv file.
 
-**Step 3:** `cd` into the `prediction` folder.
+**Step 3:** `cd` into the `predictions` folder.
 
 **Step 5:** Run `prediction.py`.
 
@@ -117,36 +118,7 @@ All you have to do is `cd` into `prediction` folder and run the `prediction.py` 
 ```bash
 python3 prediction.py
 ```
-
 Here is an example of how the predictions should look like:
-![img](<Screenshot 2024-11-01 at 1.44.01 PM.png>)
-
-# Model training and prediction 
-(this part still nd to clarify if we need them to train the model themselves or js use model pkl)
-## 1. Model Training  
-Use the `model_training.py` script to train a new model on RNA-Seq data.  
-
-Command: <pre>python model_training.py --data ./data/train_data.json --labels ./data/labels.csv --output ./models/model.pkl</pre>
-
-Inputs:  
-  - RNA-Seq data processed by m6Anet (`train_data.json`)  
-  - Labels file containing m6A site information (`labels.csv`)
-
-Output:  
-  - Trained model saved as `rf_model_reduced_tuned_kfold.pkl` in `model/` directory
-    
-## 2. Making Predictions  
-Use the `prediction.py` script to make predictions on new data.  
-
-Command:  
-<pre>python prediction.py --data ./data/test_data.json --model ./models/model.pkl --output ./predictions.csv</pre>
-
-Inputs:  
-  - RNA-Seq test data (`test_data.json`)  
-  - Optional: Pre-trained model (`rf_model_reduced_tuned_kfold.pkl`)
-
-Output:  
-  - A CSV file with predicted m6A sites (`predictions.csv`)
 
 # Issues
 - Instance Limitations:
