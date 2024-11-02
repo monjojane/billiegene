@@ -119,6 +119,7 @@ All you have to do is `cd` into `prediction` folder and run the `prediction.py` 
 python3 prediction.py
 ```
 Here is an example of how the predictions should look like:
+
 <img width="380" alt="Screenshot 2024-11-01 at 1 44 01 PM" src="https://github.com/user-attachments/assets/ea2661ad-5642-4eba-bda3-d0e5bd5757fa">
 
 # Issues
