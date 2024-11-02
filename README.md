@@ -82,6 +82,8 @@ A test data set is available for you to test the script. To run the script with 
 python3 data_parsing.py
 ```
 
+**Step 4:** Use `ls` to check that the parsed csv file is created and in the data folder.
+
 ## Training the model (Optional)
 Use `model_training.py` to train the model.
 
