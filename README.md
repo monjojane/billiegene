@@ -100,7 +100,10 @@ Use `prediction.py` to make predictions. This script loads the saved trained mod
 
 **Step 1:** Ensure the dataset (parsed csv file) you wish to make predictions on is in the `data` folder.
 
-**Step 2:** Edit the `prediction.py` script to input the csv file.
+**Step 2:** Edit the `prediction.py` script to input the csv file in the 3rd last line of the script. You can edit the script with the following command:
+```bash
+nano prediction.py
+```
 
 **Step 3:** `cd` into the `predictions` folder.
 
@@ -122,7 +125,7 @@ If you wish to skip the data parsing step as well, we already have a dataset rea
 
 We have also saved the trained model as `model.pkl` which is already loaded in the `prediction.py` script.
 
-All you have to do is to `cd` into `prediction` folder and run the `prediction.py` file to generate the results.
+All you have to do is to `cd` into `prediction` folder and run the `prediction.py` file to generate the results without having to edit the script.
 
 ```bash
 python3 prediction.py

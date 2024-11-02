@@ -33,6 +33,6 @@ def predict_m6a_modifications(model, csv_file, output_csv):
 
     print(f"\nPredictions saved to {output_csv}")
 
-csv_file = "../data/parsed_test_data.csv"  # path to parsed and aggregated csv file 
-output_csv = "../predictions/test_prediction_results.csv"  # path to the output csv file
+csv_file = "../data/pexample_parsed_data.csv"  # path to parsed and aggregated csv file 
+output_csv = "../predictions/example_prediction_results.csv"  # path to the output csv file
 predict_m6a_modifications(model, csv_file, output_csv)
