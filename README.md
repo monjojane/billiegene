@@ -110,16 +110,24 @@ Use `prediction.py` to make predictions. This script loads the saved trained mod
 python3 prediction.py
 ```
 
+**Step 6:** Use `ls` to check that the prediction csv file is created and in the predictions folder.
+
+**Step 7:** To view the first few rows of the predictions csv file
+```bash
+head < name of predictions csv file >
+```
+
 # Example Usage
-We already have a dataset ready (`example_parsed_data.csv`) to make predictions on. This dataset has been parsed and aggregated using our scripts. 
+If you wish to skip the data parsing step as well, we already have a dataset ready (`example_parsed_data.csv`) to make predictions on. This dataset has been parsed and aggregated using our scripts. 
 
 We have also saved the trained model as `model.pkl` which is already loaded in the `prediction.py` script.
 
-All you have to do is `cd` into `prediction` folder and run the `prediction.py` file to generate the results.
+All you have to do is to `cd` into `prediction` folder and run the `prediction.py` file to generate the results.
 
 ```bash
 python3 prediction.py
 ```
+
 Here is an example of how the predictions should look like:
 
 <img width="380" alt="Screenshot 2024-11-01 at 1 44 01 PM" src="https://github.com/user-attachments/assets/ea2661ad-5642-4eba-bda3-d0e5bd5757fa">
