@@ -63,8 +63,8 @@ def aggregate_data(df):
     return aggregated_df
 
 
-json_file = "../data/sample_data.json" # path to json file you want to parse
+json_file = "../data/test_data.json" # path to json file you want to parse
 parsed_df = parse_data(json_file)
 aggregated_df = aggregate_data(parsed_df)
-aggregated_df.to_csv('parsed_sample_data.csv', index=False)
-print("Aggregated data saved to 'parsed_sample_data.csv'")
+aggregated_df.to_csv('parsed_test_data.csv', index=False)
+print("Aggregated data saved to 'parsed_test_data.csv'")

@@ -12,7 +12,7 @@ DSA4262 Project (team: billiegene)
 - README.md - Main documentation
 - requirements.txt - Dependencies
 - /data - Test data and code for data parsing and manipulation
-- /model - Trained model file and script for model training
+- /models - Trained model file and script for model training
 - /predictions - Expected predictions csv file and script for predictions
 
 # AWS Setup Guide 
@@ -29,7 +29,7 @@ git clone https://github.com/monjojane/billiegene.git
 ```
 4. `cd` into billiegene
 ```bash
-cd billiegene</pre>
+cd billiegene
 ```
 
 # Prerequisites
@@ -40,10 +40,14 @@ cd billiegene</pre>
 
 ## Dependencies 
 Ensure that you are in the project directory `billiegene`, else naviate to that directory using this command:
-<pre>cd billiegene</pre>
+```bash
+cd billiegene
+```
 
 Install all necessary Python packages:
-<pre>pip install -r requirements.txt</pre>
+```bash
+pip install -r requirements.txt
+```
 
 Alternatively, create a virtual environment:
 <pre>python3 -m venv myenv  
@@ -51,20 +55,25 @@ source myenv/bin/activate
 pip install -r requirements.txt</pre>
 
 After installation, you can verify the packages were installed successfully:
-<pre>pip list</pre>
+```bash
+pip list
+```
 
-# Usage
+# How to run the method on AWS
 
 To run/test the scripts, follow these step-by-step instructions:
 
 ## Data parsing
-Use `data_parsing.py` to parse your raw data into a readable format.
-
+Use `data_parsing.py` to parse your raw json data into a readable csv format.
 Ensure that the raw json file is in the `data` folder.
 
-**Step 1:** `cd` into the `data` folder
+A test data set is available for you to test the script. To run the script with the test data set:
 
-**Step 2:**  Run the `data_parsing.py` script.
+**Step 1:** `cd` into the `data` folder.
+
+**Step 2:**  Ensure that the dataset you would like to parse is correctly stated in the script `data_parsing.py`.
+
+**Step 3:** Run `data_parsing.py`.
 
 ```bash 
 python3 data_parsing.py
@@ -73,11 +82,9 @@ python3 data_parsing.py
 ## Training the model (Optional)
 Use `model_training.py` to train the model.
 
-**Step 1:** Ensure the paths in the `model_training.py` corresponds to the file you created in step 1.
+**Step 1:** `cd` into the `model` folder.
 
-**Step 2:** `cd` into the `model` folder.
-
-**Step 3:** Run the `model_training.py` script.
+**Step 2:** Run the `model_training.py` script.
 
 ```bash
 python3 model_training.py
@@ -86,22 +93,19 @@ python3 model_training.py
 ## Making predictions
 Use `prediction.py` to make predictions.
 
-This script loads the saved trained model and uses it to make predictions on a set of data you input
+This script loads the saved trained model and uses it to make predictions on a set of data you input.
 
 **Step 1:** Ensure the dataset (parsed csv file) you wish to make predictions on is under the `data` folder.
 
-**Step 2:** Edit the script to input the csv file.
+**Step 2:** Edit the `prediction.py` script to input the csv file.
 
-**Step 3:** Ensure the path to output_csv in `prediction.py` corresponds to the file you created in step 3.
+**Step 3:** `cd` into the `prediction` folder.
 
-**Step 4:** `cd` into the `prediction` folder.
-
-**Step 5:** Run the `prediction.py` script.
+**Step 5:** Run `prediction.py`.
 
 ```bash
 python3 prediction.py
 ```
-
 
 # Example Usage
 We already have a dataset ready (`example_parsed_data.csv`) to make predictions on. This dataset has been parsed and aggregated using our scripts. 
@@ -113,6 +117,9 @@ All you have to do is `cd` into `prediction` folder and run the `prediction.py` 
 ```bash
 python3 prediction.py
 ```
+
+Here is an example of how the predictions should look like:
+![img](<Screenshot 2024-11-01 at 1.44.01 PM.png>)
 
 # Model training and prediction 
 (this part still nd to clarify if we need them to train the model themselves or js use model pkl)
