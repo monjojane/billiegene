@@ -87,7 +87,7 @@ python3 data_parsing.py
 ## Training the model (Optional)
 Use `model_training.py` to train the model.
 
-**Step 1:** `cd` into the `model` folder.
+**Step 1:** `cd` into the `models` folder.
 
 **Step 2:** Run the `model_training.py` script.
 
