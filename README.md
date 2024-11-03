@@ -84,28 +84,20 @@ python3 data_parsing.py
 
 **Step 4:** Use `ls` to check that the parsed csv file is created and in the data folder.
 
-## Training the model (Optional)
-Use `model_training.py` to train the model.
-
-**Step 1:** `cd` into the `model` folder.
-
-**Step 2:** Run the `model_training.py` script.
-
-```bash
-python3 model_training.py
-```
+## Training the model
+The trained model is already saved in the `models` folder as `model.pkl` and you do not have to run the script to train it. However, the script is available under `models` folder as `model_training.py` for your information. 
 
 ## Making predictions
 Use `prediction.py` to make predictions. This script loads the saved trained model and uses it to make predictions on a set of data you input.
 
 **Step 1:** Ensure the dataset (parsed csv file) you wish to make predictions on is in the `data` folder.
 
-**Step 2:** Edit the `prediction.py` script to input the csv file in the 3rd last line of the script. You can edit the script with the following command:
+**Step 2:** `cd` into the `predictions` folder.
+
+**Step 3:** Edit the `prediction.py` script to input the csv file in the 3rd last line of the script. You can edit the script with the following command:
 ```bash
 nano prediction.py
 ```
-
-**Step 3:** `cd` into the `predictions` folder.
 
 **Step 5:** Run `prediction.py`.
 
@@ -123,12 +115,10 @@ head < name of predictions csv file >
 # Example Usage
 If you wish to skip the data parsing step as well, we already have a dataset ready (`example_parsed_data.csv`) to make predictions on. This dataset has been parsed and aggregated using our scripts. 
 
-We have also saved the trained model as `model.pkl` which is already loaded in the `prediction.py` script.
-
-All you have to do is to `cd` into `prediction` folder and run the `prediction.py` file to generate the results without having to edit the script.
+All you have to do is to `cd` into `prediction` folder and run the `example_prediction.py` file to generate the results without having to edit the script.
 
 ```bash
-python3 prediction.py
+python3 example_prediction.py
 ```
 
 Here is an example of how the predictions should look like:
