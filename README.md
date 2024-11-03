@@ -93,7 +93,7 @@ The prediction script (`predictions.py`) uses the trained model (`model.pkl`) to
 
 **Step 2:** Change directory into the `predictions` folder: 
 ```bash 
-cd predictions
+cd ../predictions
 ``` 
 
 **Step 3:** Run prediction script: 
