@@ -94,12 +94,7 @@ Use `prediction.py` to make predictions. This script loads the saved trained mod
 
 **Step 2:** `cd` into the `predictions` folder.
 
-**Step 3:** Edit the `prediction.py` script to input the csv file in the 3rd last line of the script. You can edit the script with the following command:
-```bash
-nano prediction.py
-```
-
-**Step 5:** Run `prediction.py`.
+**Step 3:** Run `prediction.py`.
 
 ```bash
 python3 prediction.py
