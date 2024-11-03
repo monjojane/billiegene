@@ -110,7 +110,7 @@ head < name of predictions csv file >
 # Example Usage
 If you wish to skip the data parsing step as well, we already have a dataset ready (`example_parsed_data.csv`) to make predictions on. This dataset has been parsed and aggregated using our scripts. 
 
-All you have to do is to `cd` into `prediction` folder and run the `example_prediction.py` file to generate the results without having to edit the script.
+All you have to do is to `cd` into `predictions` folder and run the `example_prediction.py` file to generate the results without having to edit the script.
 
 ```bash
 python3 example_prediction.py
