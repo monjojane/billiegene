@@ -1,15 +1,3 @@
-# pandas
-# numpy
-# scikit-learn
-# tensorflow
-# shutil
-# imblearn
-# joblib
-# json
-# gzip
-# pickle
-
-
 pandas
 scikit-learn
 numpy
