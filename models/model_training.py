@@ -7,6 +7,23 @@ import pandas as pd
 import numpy as np
 import joblib
 
+# Data Preparation - Undersampled
+agg_parsed_df = pd.read_csv("../data/aggregated_data.csv")
+underbalanced_labels_df = pd.read_csv("../data/underbalanced_labels.csv")
+
+# Ensure 'transcript_position' in balanced_labels_df is an integer
+underbalanced_labels_df['transcript_position'] = pd.to_numeric(underbalanced_labels_df['transcript_position'], errors='coerce')
+
+# merge features DataFrame (parsed_df) with balanced labels DataFrame
+underbalanced_merged_df = pd.merge(agg_parsed_df, underbalanced_labels_df, on=['transcript_id', 'transcript_position'], how='left')
+underbalanced_merged_df = underbalanced_merged_df.dropna(subset=['label'])
+
+# define features (X) and target variable (y)
+y_underbalanced = underbalanced_merged_df['label']
+X_underbalanced = underbalanced_merged_df.drop(columns=['transcript_id', 'transcript_position', 'nucleotide_sequence', 'label', 'gene_id'])
+X_underbalanced = X_underbalanced.apply(pd.to_numeric, errors='coerce')  # convert to numeric and set invalid parsing to NaN
+X_underbalanced = X_underbalanced.dropna()  # drop rows with NaN values
+
 # Best hyperparameters from tuning
 best_hyperparameters = {
     'n_estimators': 110,
@@ -26,6 +43,9 @@ accuracy_list, precision_list, recall_list, f1_list, auc_roc_list = [], [], [], 
 confusion_matrices = [] 
 
 # Identify and remove the least important feature
+rf_model = RandomForestClassifier(**best_hyperparameters, random_state=42)
+rf_model.fit(X_underbalanced, y_underbalanced)
+
 importance_df = pd.DataFrame({
     'Feature': X_underbalanced.columns,
     'Importance': rf_model.feature_importances_
