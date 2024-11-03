@@ -100,9 +100,9 @@ Use `prediction.py` to make predictions. This script loads the saved trained mod
 python3 prediction.py
 ```
 
-**Step 6:** Use `ls` to check that the prediction csv file is created and in the predictions folder.
+**Step 4:** Use `ls` to check that the prediction csv file is created and in the predictions folder.
 
-**Step 7:** To view the first few rows of the predictions csv file
+**Step 5:** To view the first few rows of the predictions csv file
 ```bash
 head < name of predictions csv file >
 ```
