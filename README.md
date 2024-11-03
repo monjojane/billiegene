@@ -59,52 +59,50 @@ After installation, you can verify the packages were installed successfully:
 ```bash
 pip list
 ```
+## Note
+Ensure you have done the AWS setup guide and installed all necessary dependencies before running the code below.  
 
-# How to run the method on AWS
-
-To run/test the scripts, ensure you have done the AWS setup guide and installed all necessary dependencies as mentioned above. 
-
-Then follow these step-by-step instructions:
+# Model training and prediction
 
 ## Data parsing
-Use `data_parsing.py` to parse your raw json data into a readable csv format.
-Ensure that the raw json file is in the `data` folder.
+The raw json data is parsed and aggregated using `data_parsing.py` into a readable csv format.
 
 A test data set is available for you to test the script. To run the script with the test data set:
 
-**Step 1:** `cd` into the `data` folder.
+**Step 1:** Change directory into the `data` folder:
+```bash 
+cd data
+```
+**Step 2:** Using the `ls` command, ensure that the raw json file (`test_data.json`) is in the `data` folder. 
 
-**Step 2:**  Ensure that the dataset you would like to parse is correctly stated in the script `data_parsing.py`.
-
-**Step 3:** Run `data_parsing.py`.
-
+**Step 3:** Run the data parsing script:
 ```bash 
 python3 data_parsing.py
 ```
+**Step 4:** Using the `ls` command, ensure that the parsed data have been saved successfully as `parsed_test_data.csv`.
 
-**Step 4:** Use `ls` to check that the parsed csv file is created and in the data folder.
+## Training the model 
+The model is trained and tuned using our pre-determined parameters and features. The trained model (`model.pkl`) is then generated from the model training script (`model_training.py`). 
 
-## Training the model
-The trained model is already saved in the `models` folder as `model.pkl` and you do not have to run the script to train it. However, the script is available under `models` folder as `model_training.py` for your information. 
+The model training script and trained model file can be found in the `models` folder, however you <ins>do not</ins> need to run the script. 
 
-## Making predictions
-Use `prediction.py` to make predictions. This script loads the saved trained model and uses it to make predictions on a set of data you input.
+## Making predictions 
+The prediction script (`predictions.py`) uses the trained model (`model.pkl`) to make m6A site predictions on the test data set (`parsed_test_data.csv`). 
 
-**Step 1:** Ensure the dataset (parsed csv file) you wish to make predictions on is in the `data` folder.
+**Step 1:** Using the `ls` command, ensure that `parsed_test_data.csv` is present in the `data` folder. 
 
-**Step 2:** `cd` into the `predictions` folder.
+**Step 2:** Change directory into the `predictions` folder: ```bash cd predictions ``` 
 
-**Step 3:** Run `prediction.py`.
-
-```bash
+**Step 3:** Run prediction script: 
+```bash 
 python3 prediction.py
 ```
 
-**Step 4:** Use `ls` to check that the prediction csv file is created and in the predictions folder.
+**Step 4:** Using the `ls` command, ensure that the generated predictions have been saved successfully as `prediction_results.csv`. 
 
-**Step 5:** To view the first few rows of the predictions csv file
-```bash
-head < name of predictions csv file >
+**Step 5:** To view the first few rows of the predictions csv file 
+```bash 
+head prediction_results.csv
 ```
 
 # Example Usage
