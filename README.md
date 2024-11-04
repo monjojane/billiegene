@@ -50,11 +50,6 @@ Install all necessary Python packages:
 pip install -r requirements.txt
 ```
 
-Alternatively, create a virtual environment:
-<pre>python3 -m venv myenv  
-source myenv/bin/activate  
-pip install -r requirements.txt</pre>
-
 After installation, you can verify the packages were installed successfully:
 ```bash
 pip list
