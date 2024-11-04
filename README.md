@@ -103,15 +103,6 @@ python3 prediction.py
 head prediction_results.csv
 ```
 
-# Example Usage
-If you wish to skip the data parsing step as well, we already have a dataset ready (`example_parsed_data.csv`) to make predictions on. This dataset has been parsed and aggregated using our scripts. 
-
-All you have to do is to `cd` into `predictions` folder and run the `example_prediction.py` file to generate the results without having to edit the script.
-
-```bash
-python3 example_prediction.py
-```
-
 Here is an example of how the predictions should look like:
 
 <img width="380" alt="Screenshot 2024-11-01 at 1 44 01 PM" src="https://github.com/user-attachments/assets/ea2661ad-5642-4eba-bda3-d0e5bd5757fa">
