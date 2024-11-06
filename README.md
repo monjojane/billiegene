@@ -76,6 +76,15 @@ python3 data_parsing.py
 ```
 **Step 4:** Using the `ls` command, ensure that the parsed data have been saved successfully as `parsed_test_data.csv`.
 
+**Step 5:** To view the first few rows of the `parsed_test_data.csv` file, run 
+```bash 
+head parsed_test_data.csv
+```
+
+Here is an example of how the `parsed_test_data.csv` should look like:
+![image](https://github.com/user-attachments/assets/aa048b91-3370-4803-aac9-c6baaf24ef0f)
+
+
 ## Model Training 
 The model is trained and tuned using our pre-determined parameters and features. The trained model (`model.pkl`) is then generated from the model training script (`model_training.py`). 
 
