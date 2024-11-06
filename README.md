@@ -82,6 +82,7 @@ head parsed_test_data.csv
 ```
 
 Here is an example of how the `parsed_test_data.csv` should look like:
+
 ![image](https://github.com/user-attachments/assets/aa048b91-3370-4803-aac9-c6baaf24ef0f)
 
 
@@ -109,12 +110,13 @@ python3 prediction.py
 
 **Step 4:** Using the `ls` command, ensure that the generated predictions have been saved successfully as `prediction_results.csv`. 
 
-**Step 5:** To view the first few rows of the predictions csv file 
+**Step 5:** To view the first few rows of the predictions csv file, run
 ```bash 
 head prediction_results.csv
 ```
 
 Here is an example of how the predictions should look like:
+
 ![image](https://github.com/user-attachments/assets/66c1a2e6-4375-46f4-857c-27243f0ded60)
 
 
