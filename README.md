@@ -81,7 +81,7 @@ The model is trained and tuned using our pre-determined parameters and features.
 
 `aggregated_data.csv` and `underbalanced_labels.csv` are used in the training script (`model_training.py`) and they can be found in the `data` folder. 
 
-The model training script and trained model file can be found in the `models` folder, however you <ins>do not</ins> need to run the training script as the trained model is already loaded in the `predictions.py` script. 
+The model training script (`model_training.py`) and trained model file (`model.pkl`) can be found in the `models` folder. However, you <ins>do not</ins> need to run the training script as the trained model is already loaded in the `predictions.py` script. 
 
 ## Generating predictions
 The prediction script (`predictions.py`) uses the trained model (`model.pkl`) to make m6A site predictions on the test data set (`parsed_test_data.csv`). 
