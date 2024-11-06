@@ -76,12 +76,14 @@ python3 data_parsing.py
 ```
 **Step 4:** Using the `ls` command, ensure that the parsed data have been saved successfully as `parsed_test_data.csv`.
 
-## Training the model 
+## Model Training 
 The model is trained and tuned using our pre-determined parameters and features. The trained model (`model.pkl`) is then generated from the model training script (`model_training.py`). 
+
+`aggregated_data.csv` and `underbalanced_labels.csv` are used in the training script (`model_training.py`) and they can be found in the `data` folder. 
 
 The model training script and trained model file can be found in the `models` folder, however you <ins>do not</ins> need to run the script. 
 
-## Making predictions 
+## Generating predictions
 The prediction script (`predictions.py`) uses the trained model (`model.pkl`) to make m6A site predictions on the test data set (`parsed_test_data.csv`). 
 
 **Step 1:** Using the `ls` command, ensure that `parsed_test_data.csv` is present in the `data` folder. 
