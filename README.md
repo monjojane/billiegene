@@ -115,8 +115,8 @@ head prediction_results.csv
 ```
 
 Here is an example of how the predictions should look like:
+![image](https://github.com/user-attachments/assets/66c1a2e6-4375-46f4-857c-27243f0ded60)
 
-<img width="380" alt="Screenshot 2024-11-01 at 1 44 01 PM" src="https://github.com/user-attachments/assets/ea2661ad-5642-4eba-bda3-d0e5bd5757fa">
 
 # Issues
 - Instance Limitations:
